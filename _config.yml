@@ -1,19 +1,16 @@
-title:  Aras class website
-tagline:  Projects and homework
-description:  Class things
+title:            Ara's Homework Blog
+tagline:          Impossible Maps
+description:      bla bla bla
 
 
 # Owner/author information
-  owner:
-  name: Ara Aman 
-  avatar: avatar.png
-  bio:  Aesthete & Athlet
-
-  # Plug in your disqus shortname!
+owner:
+  name:           Ara Aman
+  bio:            Student
 
 tools:
-  standards:  "HTML, SCSS, Jekyll"
-  software: "git"
+  standards:      "HTML, SCSS, Jekyll"
+  software:       "git"
 
 # Open Graph customization
 opengraph:
@@ -25,12 +22,11 @@ links:
   - title: About
     url: /about
 
-
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/New_York
 future:      true
+highlighter: highlighter
 markdown:    kramdown
-highlighter:  rouge
 
 kramdown:
   auto_ids: true
