@@ -4,10 +4,10 @@ description:      Class things
 
 
 # Owner/author information
-owner:
+  owner:
   name:           Ara Aman 
   avatar:         avatar.png
-  bio:            "Aesthete & Athlet
+  bio:            Aesthete & Athlet
 
   # Plug in your disqus shortname!
 
