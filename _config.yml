@@ -1,19 +1,19 @@
-title:            Ara's class website
-tagline:          Projects and homework
-description:      Class things
+title:  Ara's class website
+tagline:  Projects and homework
+description:  Class things
 
 
 # Owner/author information
   owner:
-  name:           Ara Aman 
-  avatar:         avatar.png
-  bio:            Aesthete & Athlet
+  name: Ara Aman 
+  avatar: avatar.png
+  bio:  Aesthete & Athlet
 
   # Plug in your disqus shortname!
 
 tools:
-  standards:      "HTML, SCSS, Jekyll"
-  software:       "git"
+  standards:  "HTML, SCSS, Jekyll"
+  software: "git"
 
 # Open Graph customization
 opengraph:
@@ -30,7 +30,7 @@ links:
 timezone:    America/New_York
 future:      true
 markdown:    kramdown
-highlighter: rouge
+highlighter:  rouge
 
 kramdown:
   auto_ids: true
