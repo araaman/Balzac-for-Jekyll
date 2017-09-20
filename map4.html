@@ -1,0 +1,41 @@
+<!-- Mapbox documentation link below -->
+<!-- https://www.mapbox.com/mapbox.js/api/v3.1.1/l-control/ -->
+<!DOCTYPE html>
+
+<head>
+    <style>
+  
+    </style>
+    <title> Adding Markers with Mapbox </title>
+    <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+    <link href='assets/marker-styles.css' rel='stylesheet'>
+    <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet'>
+
+  <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>  
+
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+
+    L.mapbox.accessToken = 'pk.eyJ1IjoiYXJhYW1hbiIsImEiOiJjajd0MnlsOWUzOThwMnFwazdzcjR4ZGFiIn0.Y068nEQKyYJ8z0902ZQgWg';
+    var map = L.mapbox.map('map', 'mapbox.streets').setView([42.919, -73.2400], 4);
+
+   
+ var layer = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
+    }).addTo(map);
+
+ omnivore.geojson('states.json').addTo(map);
+ // link to the states.json in the week 3 folder and gets all that data from the computer
+
+ omnivore.csv('all_hour.csv').addTo(map);
+ // link to the all_hour file downloaded from the internet. 
+ // remembver the file type to upload
+ 
+
+    </script>
+</body>
+
+</html>

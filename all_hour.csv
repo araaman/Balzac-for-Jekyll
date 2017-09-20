@@ -1,0 +1,6 @@
+time,latitude,longitude,depth,mag,magType,nst,gap,dmin,rms,net,id,updated,place,type,horizontalError,depthError,magError,magNst,status,locationSource,magSource
+2017-09-20T14:44:45.045Z,61.1759,-146.4863,4.5,1.6,ml,,,,0.79,ak,ak16871415,2017-09-20T14:57:17.749Z,"8km NW of Valdez, Alaska",earthquake,,0.2,,,automatic,ak,ak
+2017-09-20T14:42:08.120Z,-17.9346,-114.1207,10,5,mb,,276,39.455,0.64,us,us2000arvu,2017-09-20T14:59:43.040Z,"Southern East Pacific Rise",earthquake,23.8,2,0.146,15,reviewed,us,us
+2017-09-20T14:41:08.820Z,33.9295,-117.5145,2.22,1.55,ml,42,35,0.08551,0.16,ci,ci38007016,2017-09-20T14:44:44.739Z,"3km E of Norco, CA",earthquake,0.19,0.35,0.162,26,automatic,ci,ci
+2017-09-20T14:29:56.770Z,23.2931,121.7572,22.03,5.3,mww,,36,0.434,1.06,us,us2000arvi,2017-09-20T15:20:03.324Z,"77km SSE of Hualian, Taiwan",earthquake,5.2,4.7,0.073,18,reviewed,us,us
+2017-09-20T14:29:05.650Z,40.251667,-124.1708298,8.78,2.99,md,13,167,0.04504,0.12,nc,nc72895726,2017-09-20T14:52:10.749Z,"28km S of Rio Dell, California",earthquake,0.48,0.66,0.09,12,automatic,nc,nc
