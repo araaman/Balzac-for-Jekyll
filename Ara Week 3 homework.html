@@ -1,0 +1,378 @@
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Travel Map</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
+<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+<body>
+<div id='map'></div>
+
+<script >
+L.mapbox.accessToken = 'pk.eyJ1IjoiYXJhYW1hbiIsImEiOiJjajd0MnlsOWUzOThwMnFwazdzcjR4ZGFiIn0.Y068nEQKyYJ8z0902ZQgWg'
+
+
+var map = L.map('map').setView ([0,0],2);
+  // The coordinates and zoon level in brackets
+    var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+    attribution:'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    subdomains: 'abcd',
+    minZoom: 1,
+    maxZoom: 20,
+    ext: 'png'}).addTo(map); 
+    
+    var Stamen_TonerLabels = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-labels/{z}/{x}/{y}.{ext}', {
+  attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  subdomains: 'abcd',
+  minZoom: 0,
+  maxZoom: 20,
+  ext: 'png'}).addTo(map)
+
+L.marker([42.918130, -73.238850]).addTo(map)
+    .bindPopup('Bennington College')
+    .openPopup()
+    .addTo(map);
+L.marker([51.033971, -1.109716]).addTo(map)
+    .bindPopup('My Highschool')
+    .openPopup()
+    .addTo(map);
+L.marker([30.729400, 76.823584]).addTo(map)
+    .bindPopup('Home')
+    .openPopup()
+    .addTo(map);
+
+L.marker([51.033971, -1.109716]).addTo(map)
+    .bindPopup('My Highschool')
+    .openPopup()
+    .addTo(map);
+
+
+
+
+
+// Generate a GeoJSON line. You could also load GeoJSON via AJAX
+// or generate it some other way.
+var geojson = { type: 'LineString', coordinates: [[
+            76.75048828125,
+            30.751277776257812
+          ],
+          [
+            77.18994140625,
+            28.5941685062326
+          ],
+          [
+            75.8056640625,
+            26.902476886279832
+          ],
+          [
+            73.037109375,
+            26.293415004265796
+          ],
+          [
+            76.4208984375,
+            30.342065246371636
+          ],
+          [
+            75.849609375,
+            30.91636380602182
+          ],
+          [
+            75.5914306640625,
+            31.31844779444928
+          ],
+          [
+            76.32476806640625,
+            32.24068253457369
+          ],
+          [
+            77.1734619140625,
+            31.107036956407075
+          ],
+          [
+            78.01666259765625,
+            30.330212685432734
+          ],
+          [
+            77.552490234375,
+            34.16636338473789
+          ],
+          [
+            77.18856811523438,
+            32.24532861404601
+          ],
+          [
+            73.8720703125,
+            18.47960905583197
+          ],
+          [
+            72.83935546875,
+            18.93746442964186
+          ],
+          [
+            77.51953125,
+            13.025965926333539
+          ],
+          [
+            80.2056884765625,
+            13.07947827722643
+          ],
+          [
+            79.80743408203124,
+            11.888853082975968
+          ],
+          [
+            76.9482421875,
+            10.973549898080215
+          ],
+          [
+            83.03466796874999,
+            25.423431426334222
+          ],
+          [
+            77.93701171875,
+            30.240086360983426
+          ],
+          [
+            77.27783203125,
+            28.5941685062326
+          ],
+          [
+            121.6021728515625,
+            25.02090651422749
+          ],
+          [
+            120.25634765624999,
+            22.61908160971607
+          ],
+          [
+            120.21240234375001,
+            22.98873816096074
+          ],
+          [
+            121.56921386718751,
+            25.025884063244828
+          ],
+          [
+            -0.263671875,
+            51.45400691005982
+          ],
+          [
+            -0.10986328125,
+            50.826758482363275
+          ],
+          [
+            -1.0601806640625,
+            50.826758482363275
+          ],
+          [
+            -1.30462646484375,
+            51.05866005502052
+          ],
+          [
+            -1.0711669921875,
+            51.25847731518399
+          ],
+          [
+            -0.929718017578125,
+            51.009434536947786
+          ],
+          [
+            -1.1370849609375,
+            51.050459433092655
+          ],
+          [
+            0.098876953125,
+            52.20760667286523
+          ],
+          [
+            -3.14208984375,
+            54.49875763994263
+          ],
+          [
+            -3.53485107421875,
+            50.73993156768006
+          ],
+          [
+            -0.340576171875,
+            51.44716034698012
+          ],
+          [
+            2.35107421875,
+            48.850258199721495
+          ],
+          [
+            11.271972656249998,
+            43.74728909225908
+          ],
+          [
+            12.315673828125,
+            45.43700828867391
+          ],
+          [
+            6.13037109375,
+            46.210249600187225
+          ],
+          [
+            10.909423828125,
+            45.41773242370463
+          ],
+          [
+            11.35986328125,
+            46.49839225859763
+          ],
+          [
+            4.85595703125,
+            52.36218321674427
+          ],
+          [
+            5.144348144531249,
+            52.07444183716456
+          ],
+          [
+            6.13037109375,
+            52.236210353688655
+          ],
+          [
+            6.233367919921874,
+            51.84002022371389
+          ],
+          [
+            8.622894287109375,
+            49.63828784645708
+          ],
+          [
+            8.640747070312498,
+            50.1135334310997
+          ],
+          [
+            9.690628051757812,
+            47.54988411078578
+          ],
+          [
+            8.535003662109375,
+            47.36673410912714
+          ],
+          [
+            77.0361328125,
+            28.69058765425071
+          ],
+          [
+            76.86035156249999,
+            30.637912028341123
+          ],
+          [
+            76.88232421875,
+            28.5941685062326
+          ],
+          [
+            13.359375,
+            52.50953477032727
+          ],
+          [
+            12.392578125,
+            51.337475662965204
+          ],
+          [
+            14.436035156250002,
+            50.085344397538876
+          ],
+          [
+            12.3486328125,
+            51.31001339554934
+          ],
+          [
+            16.358642578125,
+            48.21003212234042
+          ],
+          [
+            6.13037109375,
+            46.30140615437332
+          ],
+          [
+            7.220764160156249,
+            46.47286211195876
+          ],
+          [
+            6.118011474609375,
+            46.21310053621607
+          ],
+          [
+            -77.05810546875,
+            38.89103282648846
+          ],
+          [
+            -73.93798828125,
+            40.74725696280421
+          ],
+          [
+            -78.64013671875,
+            35.782170703266075
+          ],
+          [
+            -121.81640624999999,
+            37.37015718405753
+          ],
+          [
+            -122.34374999999999,
+            37.75334401310656
+          ],
+          [
+            -121.81640624999999,
+            37.16031654673677
+          ],
+          [
+            -122.71728515624999,
+            45.521743896993634
+          ],
+          [
+            -77.080078125,
+            38.96795115401593
+          ],
+          [
+            -73.7786865234375,
+            42.67839711889055
+          ],
+          [
+            -73.212890625,
+            42.90816007196054
+          ]] };
+var start = [10, 10];
+var momentum = [1, 1];
+
+
+
+// Add this generated geojson object to the map.
+L.geoJson(geojson).addTo(map);
+
+// Create a counter with a value of 0.
+var j = 0;
+
+// Create a marker and add it to the map.
+var marker = L.marker([0, 0], {
+  icon: L.mapbox.marker.icon({
+    'marker-color': '#5e7f02',
+    'marker-symbol': 'london-underground',
+  })
+}).addTo(map);
+
+tick();
+function tick() {
+    // Set the marker to be at the same point as one
+    // of the segments or the line.
+    marker.setLatLng(L.latLng(
+        geojson.coordinates[j][1],
+        geojson.coordinates[j][0]));
+
+    // Move to the next point of the line
+    // until `j` reaches the length of the array.
+    if (++j < geojson.coordinates.length) setTimeout(tick, 200);
+}
+
+</script>
+</body>
+</html>
