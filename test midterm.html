@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+     <style> 
+    @import url('https://fonts.googleapis.com/css?family=Lato');
+    body {  margin: 0; padding: 0;  ; }
+    html,
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  .map-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.8);
+    margin-left: 20px;
+    font-family: 'Lato', sans-serif;
+    overflow: auto;
+    border-radius: 3px;
+  }
+  #features {
+    top: 0;
+    height: 100px;
+    margin-top: 20px;
+    width: 250px;
+  }
+ h2, p {
+    color: black;
+    margin: 10px;
+ }
+    </style>
+
+
+<title> Camden Tree Map </title>
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.js'></script>
+
+<link href='https://api.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.css' rel='stylesheet' />
+ <!-- <link href='https://api.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.css' rel='stylesheet' /> -->
+</head>
+
+<body>
+
+    <div id="map" class ="mapboxgl-map"></div>
+    <div class="map-overlay" id="features">
+    <h2> Trees in Canden Town, London </h2>
+    <p> Click to center</p>
+</div>
+   
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+
+
+    <script>
+
+
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYXJhYW1hbiIsImEiOiJjajd0MnlsOWUzOThwMnFwazdzcjR4ZGFiIn0.Y068nEQKyYJ8z0902ZQgWg';
+    
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYXJhYW1hbiIsImEiOiJjajd0MnlsOWUzOThwMnFwazdzcjR4ZGFiIn0.Y068nEQKyYJ8z0902ZQgWg';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/dark-v8',
+    center: [-0.154301, 51.548612], // [long, lat] 
+        zoom: 12
+    
+    });
+
+    map.on('load', function(){
+        map.addLayer({
+            id: 'trees',
+            type: 'circle',
+            source: {
+                type: 'geojson',
+                data: 'CamdenTreesLondon.geojson' // the name of the file 
+            },
+            
+
+            
+
+
+
+
+    
+
+            
+
+            
+        }
+        
+    );
+})
+
+
+    //Let's instantiate a pop-up (but not add it to map yet)
+    var popup = new mapboxgl.Popup({
+        // closeButton: false,
+        closeOnClick: false
+    });
+   map.on('mouseenter', 'trees', function(e){
+    map.getCanvas().style.cursor = 'pointer'; //change cursor 
+    //Populate pop-up with information from our geojson file
+    //Add to map on hover (or mouseenter), with "Magnitude: " 
+   });
+   map.on('click', 'trees', function(e){
+      map.flyTo({center: e.features[0].geometry.coordinates});
+   });
+ 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+     <style> 
+    @import url('https://fonts.googleapis.com/css?family=Lato');
+    body {  margin: 0; padding: 0;  ; }
+    html,
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  .map-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.8);
+    margin-left: 20px;
+    font-family: 'Lato', sans-serif;
+    overflow: auto;
+    border-radius: 3px;
+  }
+  #features {
+    top: 0;
+    height: 450px;
+    margin-top: 20px;
+    width: 300px;
+  }
+ h2, p {
+    color: black;
+    margin: 10px;
+ }
+    </style>
+
+
+<title> Camden Tree Map </title>
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.css' rel='stylesheet' />
+ <!-- <link href='https://api.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.css' rel='stylesheet' /> -->
+</head>
+
+<body>
+
+    <div id="map" class ="mapboxgl-map"></div>
+    <div class="map-overlay" id="features">
+    <h2> The Trees In Camden, London </h2>
+    <p> This map represents of the trees in the London Borough of Camden. 
+    I was inspired by Jill Hubley's NYC Tree map (http://jillhubley.com/project/nyctrees/). 
+  </p> <p> I was curious to see what the tree canopy would look like in London, but due to availabity of data I was only able to show the tree canopy of the Borough of Camden.</p> 
+
+    <p> The colors represent the type of tree and if you hover over them, you will be able to see the common name of the tree.    </p>
+  
+
+    <p> There are 310 different types of trees in Camden.</p> 
+   
+</div>
+   
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+
+
+    <script>
+
+
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYXJhYW1hbiIsImEiOiJjajd0MnlsOWUzOThwMnFwazdzcjR4ZGFiIn0.Y068nEQKyYJ8z0902ZQgWg';
+    
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYXJhYW1hbiIsImEiOiJjajd0MnlsOWUzOThwMnFwazdzcjR4ZGFiIn0.Y068nEQKyYJ8z0902ZQgWg';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/dark-v8',
+    center: [-0.162488, 51.540999], // [long, lat] 
+        zoom: 12.5
+    
+    });
+
+  
+
+    
+    map.on('load', function(){
+        
+
+
+        map.addLayer({
+            id: 'trees',
+            type: 'circle',
+            source: {
+                type: 'geojson',
+                data: 'MidtermCamdenData.geojson' // the name of the file 
+            },
+            paint: {
+            'circle-color':  {
+            property: 'CommonName',
+            type: 'categorical',
+            stops: [
+            ["Alder - Blue", '#FF5722'],
+            ["Alder - Common", '#FBE9E7'],
+            ["Alder - Cut leaved", '#FFCCBC'],
+            ["Alder - Green", '#FFAB91'],
+            ["Alder - Grey", '#FF8A65'],
+            ["Alder - Italian", '#FF7043'],
+            ["Alder - Red", '#FF5722'],
+            ["Alder - Spaeth", '#F4511E'],
+            ["Almond", '#E64A19'],
+            ["Apple", '#D84315'],
+            ["Apple - Chinese Crab", '#BF360C'],
+            ["Apple - Crab", '#FF9E80'],
+            ["Apple - Purple crab", '#FF6E40'],
+            ["Apple - Snakebark", '#FF3D00'],
+            ["Ash", '#DD2C00'],
+            ["Ash - American", '#FF9800'],
+            ["Ash - Manna", '#FFF3E0'],
+            ["Ash - Narrow-leafed", '#FFE0B2'],
+            ["Ash - One-leaved", '#FFCC80'],
+            ["Ash - Weeping", '#FFB74D'],
+            ["Ash - Weeping narrow-leafed", '#FFA726'],
+            ["Ash - Yellow", '#FF9800'],
+            ["Aspen", '#FB8C00'],
+            ["Bay tree", '#F57C00'],
+            ["Bee-bee Tree", '#EF6C00'],
+            ["Beech - Antarctic", '#E65100'],
+            ["Beech - Common", '#FFD180'],
+            ["Beech - Fastigiate", '#FFAB40'],
+            ["Beech - Purple", '#FF9100'],
+            ["Birch", '#FF6D00'],
+            ["Birch - Chinese Red", '#FFC107'],
+            ["Birch - Cut-leaved", '#FFF8E1'],
+            ["Birch - Downy, Hairy", '#FFECB3'],
+            ["Birch - Erman's", '#FFE082'],
+            ["Birch - Himalayan", '#FFD54F'],
+            ["Birch - Monarch", '#FFCA28'],
+            ["Birch - Purple", '#FFC107'],
+            ["Birch - River", '#FFB300'],
+            ["Birch - Silver", '#FFA000'],
+            ["Birch - Weeping silver", '#FF8F00'],
+            ["Birch - Young's weeping", '#FF6F00'],
+            ["Blackthorn", '#FFE57F'],
+            ["Blue Gum", '#FFD740'],
+            ["Box Elder - Variegated", '#FFC400'],
+            ["Buckeye - Yellow", '#FFAB00'],
+            ["Butterfly bush", '#FFEB3B'],
+            ["Cabbage Tree", '#FFFDE7'],
+            ["Catalpa - Northern", '#FFF9C4'],
+            ["Caucasian wingnut", '#FFF59D'],
+            ["Cedar - Atlas", '#FFF176'],
+            ["Cedar - Deodar", '#FFEE58'],
+            ["Cedar - Western Red", '#FFEB3B'],
+            ["Cedar - White", '#FDD835'],
+            ["Cedar of Lebanon", '#FBC02D'],
+            ["Cherry", '#F9A825'],
+            ["Cherry - Bird", '#F57F17'],
+            ["Cherry - Cornelian", '#FFFF8D'],
+            ["Cherry - Double pint", '#FFFF00'],
+            ["Cherry - Double white", '#FFEA00'],
+            ["Cherry - Japanese", '#FFD600'],
+            ["Cherry - Manchurian", '#CDDC39'],
+            ["Cherry - Mop Top", '#F9FBE7'],
+            ["Cherry - Ornamental", '#F0F4C3'],
+            ["Cherry - Rosebud", '#E6EE9C'],
+            ["Cherry - Sargent's", '#DCE775'],
+            ["Cherry - Tibetan", '#D4E157'],
+            ["Cherry - Weeping", '#CDDC39'],
+            ["Cherry - Wild, Gean", '#C0CA33'],
+            ["Chinese windmill palm", '#AFB42B'],
+            ["Chokecherry", '#9E9D24'],
+            ["Cotoneaster", '#827717'],
+            ["Cotoneaster - Willow-leaved", '#F4FF81'],
+            ["Crabapple - Cut-leaf", '#EEFF41'],
+            ["Crape myrtle", '#EEFF41'],
+            ["Cypress", '#C6FF00'],
+            ["Cypress - Bald", '#AEEA00'],
+            ["Cypress - Lawson", '#8BC34A'],
+            ["Cypress - Leyland", '#DCEDC8'],
+            ["Cypress - Monterey", '#C5E1A5'],
+            ["Dawn Redwood", '#AED581'],
+            ["Dogwood", '#9CCC65'],
+            ["Dogwood - Chinese", '#8BC34A'],
+            ["Dogwood - Flowering", '#7CB342'],
+            ["Elder", '#689F38'],
+            ["Elm", '#558B2F'],
+            ["Elm - Dodoens", '#33691E'],
+            ["Elm - Dutch", '#CCFF90'],
+            ["Elm - English", '#B2FF59'],
+            ["Elm - Lobel's", '#76FF03'],
+            ["Elm - Smoothleaf", '#64DD17'],
+            ["Elm - Wych", '#4CAF50'],
+            ["False Acacia", '#E8F5E9'],
+            ["False Acacia - Frisia", '#C8E6C9'],
+            ["False Acacia - Upright", '#A5D6A7'],
+            ["Fig", '#81C784'],
+            ["Fir - Douglas", '#66BB6A'],
+            ["Fir - Noble", '#4CAF50'],
+            ["Fir - Silver", '#43A047'],
+            ["Flannel Bush", '#388E3C'],
+            ["Foxglove Tree", '#2E7D32'],
+            ["Giant Sequoia", '#1B5E20'],
+            ["Golden Indian bean tree", '#B9F6CA'],
+            ["Golden Rain Tree", '#69F0AE'],
+            ["Gum - Cider", '#00E676'],
+            ["Gum - Snow", '#00C853'],
+            ["Hackberry", '#009688'],
+            ["Handkerchief Tree", '#E0F2F1'],
+            ["Hardy Rubber Tree", '#B2DFDB'],
+            ["Hawthorn", '#80CBC4'],
+            ["Hawthorn - Broad-leaved cockspur thorn", '#4DB6AC'],
+            ["Hawthorn - Cockspur", '#26A69A'],
+            ["Hawthorn - Cockspur thorn", '#009688'],
+            ["Hawthorn - Common", '#00897B'],
+            ["Hawthorn - Double pink", '#00796B'],
+            ["Hawthorn - European", '#00695C'],
+            ["Hawthorn - Paul's Scarlet", '#004D40'],
+            ["Hawthorn - Red", '#A7FFEB'],
+            ["Hazel - Common", '#64FFDA'],
+            ["Hazel - Corkscrew", '#1DE9B6'],
+            ["Hazel - Turkish", '#00BFA5'],
+            ["Hazel - Witch", '#00BCD4'],
+            ["Holly", '#E0F7FA'],
+            ["Honey Locust", '#B2EBF2'],
+            ["Hornbeam", '#80DEEA'],
+            ["Hornbeam - Common", '#4DD0E1'],
+            ["Hornbeam - European", '#26C6DA'],
+            ["Hornbeam - Fastigiate European", '#00BCD4'],
+            ["Hornbeam - Hop", '#00ACC1'],
+            ["Hornbeam - Japanese", '#0097A7'],
+            ["Horse Chestnut", '#00838F'],
+            ["Horse chestnut - Indian", '#006064'],
+            ["Horse chestnut - Red", '#84FFFF'],
+            ["Horsechestnut - Baumann's", '#18FFFF'],
+            ["Horsechestnut - Red", '#00E5FF'],
+            ["Indian Bean Tree", '#00B8D4'],
+            ["Japanese Pagoda", '#03A9F4'],
+            ["Japanese zelkova", '#E1F5FE'],
+            ["Judas Tree", '#B3E5FC'],
+            ["June berry", '#81D4FA'],
+            ["June berry - Upright", '#4FC3F7'],
+            ["Juniper - Common", '#29B6F6'],
+            ["Juniper - Stinking", '#03A9F4'],
+            ["Kapuka", '#039BE5'],
+            ["Kentucky coffeetree", '#0288D1'], 
+            ["Kumquats", '#0277BD'],
+            ["Laburnum", '#01579B'],
+            ["Larch - European", '#80D8FF'],
+            ["Laurel - Cherry", '#40C4FF'],
+            ["Laurel - Portugese", '#00B0FF'],
+            ["Laurustinus", '#0091EA'],
+            ["Lilac", '#2196F3'],
+            ["Lime", '#BBDEFB'],
+            ["Lime - American", '#90CAF9'],
+            ["Lime - Caucasian", '#64B5F6'], 
+            ["Lime - Common", '#42A5F5'],
+            ["Lime - Henry's", '#2196F3'],
+            ["Lime - Large-leaved", '#1E88E5'],
+            ["Lime - Mongolian", '#1976D2'],
+            ["Lime - Silver", '#1565C0'],
+            ["Lime - Small-leaved", '#0D47A1'],
+            ["Lime - Weeping silver", '#82B1FF'],
+            ["London plane", '#448AFF'],
+            ["Loquat", '#2979FF'],
+            ["Magnolia", '#2962FF'],
+            ["Magnolia - Kobus", '#3F51B5'],
+            ["Maidenhair", '#C5CAE9'],
+            ["Maidenhair tree", '#9FA8DA'],
+            ["Maple", '#7986CB'],
+            ["Maple - Amur", '#5C6BC0'],
+            ["Maple - Ashleaf", '#3F51B5'],
+            ["Maple - Boxelder", '#3949AB'],
+            ["Maple - Canadian", '#303F9F'],
+            ["Maple - Caucasian", '#283593'],
+            ["Maple - Column Norway", '#1A237E'],
+            ["Maple - Crimson King Norway", '#8C9EFF'],
+            ["Maple - Field", '#536DFE'],
+            ["Maple - Freeman's", '#3D5AFE'],
+            ["Maple - Globosum Norway", '#304FFE'],
+            ["Maple - Golden", '#673AB7'],
+            ["Maple - Japanese", '#D1C4E9'],
+            ["Maple - Lebanese wild", '#B39DDB'],
+            ["Maple - Lobel's", '#9575CD'],
+            ["Maple - Norway", '#7E57C2'],
+            ["Maple - Norway 'Goldsworth Purple", '#5E35B1'],
+            ["Maple - Olmstead Norway", '#512DA8'],
+            ["Maple - Paperbark", '#4527A0'],
+            ["Maple - Purple Norway", '#311B92'],
+            ["Maple - Red", '#B388FF'],
+            ["Maple - Silver", '#7C4DFF'],
+            ["Maple - Silver veriegated Norway", '#651FFF'],
+            ["Maple - Snakebark", '#6200EA'],
+            ["Maple - Sugar", '#9C27B0'],
+            ["Maple - Variegated Norway", '#E1BEE7'],
+            ["Medlar - Common", '#CE93D8'],
+            ["Mimosa", '#BA68C8'],
+            ["Monkey Puzzle", '#AB47BC'],
+            ["Mountain-ash", '#9C27B0'],
+            ["Mulberry - Black", '#8E24AA'],
+            ["Mulberry - Paper", '#7B1FA2'],
+            ["Mulberry - White", '#6A1B9A'],
+            ["Oak - Chestnut-leaved", '#4A148C'],
+            ["Oak - Common, Pedunculate", '#EA80FC'],
+            ["Oak - Cork", '#E040FB'],
+            ["Oak - Evergreen, Holm", '#D500F9'],
+            ["Oak - Lucombe", '#AA00FF'],
+            ["Oak - Patagonian", '#E91E63'],
+            ["Oak - Pin", '#F8BBD0'],
+            ["Oak - Red", '#F48FB1'],
+            ["Oak - Scarlet", '#F06292'],
+            ["Oak - Sessile", '#EC407A'],
+            ["Oak - Turkey", '#E91E63'],
+            ["Oak - Two World", '#D81B60'],
+            ["Oak - Upright Engish", '#C2185B'],
+            ["Olive", '#AD1457'],
+            ["Paper birch", '#880E4F'],
+            ["Peanut Butter Tree", '#FF80AB'],
+            ["Pear", '#FF4081'],
+            ["Pear - Chanticclere", '#F50057'],
+            ["Pear - Chanticleer", '#C51162'],
+            ["Pear - Weeping leaved", '#f44336'],
+            ["Pecan", '#ffcdd2'],
+            ["Persian Ironwood", '#ef9a9a'],
+            ["Pine", '#e57373'],
+            ["Pine - Australian", '#ef5350'],
+            ["Pine - Bhutan", '#f44336'],
+            ["Pine - Corsican", '#e53935'],
+            ["Pine - Scots", '#d32f2f'],
+            ["Pittosporum", '#c62828'],
+            ["Plane - London", '#b71c1c'],
+            ["Plane - Oriental", '#ff8a80'],
+            ["Plum", '#ff5252'],
+            ["Plum - Common", '#ff1744'],
+            ["Plum - Purple", '#d50000'],
+            ["Plum - Victoria", '#795548'],
+            ["Poplar - Balsam", '#D7CCC8'],
+            ["Poplar - Golden", '#BCAAA4'],
+            ["Poplar - Lombardy", '#A1887F'],
+            ["Poplar - Silver", '#8D6E63'],
+            ["Poplar -Black", '#795548'],
+            ["Privet - Chinese", '#6D4C41'],
+            ["Privet - Golden", '#5D4037'],
+            ["Privet - Variegate", '#4E342E'],
+            ["Privet - Wild", '#3E2723'],
+            ["Red Robin", '#9E9E9E'],
+            ["Redbud - Eastern", '#E0E0E0'],
+            ["Redwood - Coastal", '#9E9E9E'],
+            ["Rhododendron - Common", '#757575'],
+            ["Rose of Sharon", '#616161'],
+            ["Rowan", '#424242'],
+            ["Rowan - 'Golden Wonder'", '#424242'],
+            ["Rowan - American", '#212121'],
+            ["Rowan - Cut leaved", '#607D8B'],
+            ["Rowan - Fastigiate", '#CFD8DC'],
+            ["Rowan - Hubei", '#B0BEC5'],
+            ["Rowan - Japanese", '#90A4AE'],
+            ["Rowan - Sargent's", '#78909C'],
+            ["Rowan - Scarlet", '#607D8B'],
+            ["Rowan - Vilmorin's", '#546E7A'],
+            ["Rowan - Yellow berried", '#455A64'],
+            ["Rowan, Mountain Ash", '#37474F'],
+            ["Serviceberry", '#263238'],
+            ["Serviceberry - Canadian", '#16a085'],
+            ["Spindle tree", '#2ecc71'],
+            ["Spruce", '#27ae60'],
+            ["Spruce - Colorado", '#1abc9c'],
+            ["Spruce - Norway", '#e67e22'],
+            ["Strawberry tree", '#c0392b'],
+            ["Stump", '#3498db'],
+            ["Sumach - Stag's horn", '#9b59b6'],
+            ["Sweet Chestnut", '#8e44ad'],
+            ["Sweet Chestnut - Variegated", '#e67e22'],
+            ["Sweet Gum", '#f1c40f'],
+            ["Sweetgum", '#c0392b'],
+            ["Sweetgum - Gumball", '#d35400'],
+            ["Sycamore", '#f39c12'],
+            ["Sycamore - Brillianissiumum", '#34495e'],
+            ["Sycamore - Golden", '#2c3e50'],
+            ["Sycamore - Purple leaved", '#a0522d'],
+            ["Tamarisk", '#76608a'],
+            ["Tree of Heaven", '#647687'],
+            ["Tulip - Upright", '#6d8764'],
+            ["Tulip Tree", '#825a2c'],
+            ["Tupelo", '#e3c800'],
+            ["Unknown", '#f0a30a'],
+            ["Vacant Tree Pit", '#a20025'],
+            ["Walnut", '#d80073'],
+            ["Walnut - Black", '#f472d0'],
+            ["Weeping silver birch", '#aa00ff'],
+            ["Whitebeam", '#0050ef'],
+            ["Whitebeam - Swedish", '#1ba1e2'],
+            ["Whitebeam - Tibetan", '#00aba9'],
+            ["Wier maple", '#a4c400'],
+            ["Willow", '#3b5999'],
+            ["Willow - Corkscrew", '#0084ff'],
+            ["Willow - Crack", '#25D366'],
+            ["Willow - Goat", '#09b83e'],
+            ["Willow - Kilmarnock", '#00c300'],
+            ["Willow - Scarlet", '#cd201f'],
+            ["Willow - Weeping", '#bd081c'],
+            ["Willow - White", '#00b489'],
+            ["Yellowwood", '#34465d'],
+            ["Yew", '#410093'],
+            ["Yew - common", '#4c75a3'],
+            ["Yew - Irish", '#ff6600'],
+            ["Zelkova - Caucasian", '#e4405f'],
+            ["Zelkova - Japanese", '#FFFC00'],
+
+
+
+            ]},
+            'circle-opacity': .6,
+
+            'circle-radius': 3
+
+              
+
+            
+
+        },
+    });
+})
+
+ 
+
+    var popup = new mapboxgl.Popup({
+        // closeButton: false,
+        closeOnClick: false
+    });
+   map.on('mouseenter', 'trees', function(e){
+    map.getCanvas().style.cursor = 'pointer'; //change cursor 
+    //Populate pop-up with information from our geojson file
+    //Add to map on hover (or mouseenter), with "Magnitude: "
+    popup.setLngLat(e.features[0].geometry.coordinates)
+      .setHTML(" " + e.features[0].properties.CommonName)
+      .addTo(map);  
+   
+   });
+   
+
+  
+
+    </script>
+</body>
+
+</html>
