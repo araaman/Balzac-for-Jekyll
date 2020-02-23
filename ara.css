@@ -1,0 +1,614 @@
+/*demo 2 responsive page
+*/
+*{
+	margin: 0 0 0 0;
+	padding: 0 0 0 0; /*(four declarations for marign first its top right bottom left --clockwise)*/
+}
+
+body{
+	background-color:#121212;
+	font-family:'Cormorant Garamond', serif;
+ 
+}/*body tag is the whole browser window*/
+
+/*#page{
+	background-color:#E4E4E1;
+	width: 1100px;
+	margin: 0px auto;
+
+	}*/ /*# is the way in which you style an id. it can only happen once target a certain division*/
+
+#page{
+	
+	width:1200px;
+	margin: 0px auto;
+	
+}
+
+#nav{
+	background-color:#121212;
+	height: 50px;
+	padding:0px 0 30px	0;
+	margin: 0 0 0 0	;
+
+}
+/*if theres already a height and then you add a margin or padding then it add both the height and new padding that you want so you have to subtract. 
+*/
+#nav ul li{
+	display: inline;
+	list-style: none;
+	letter-spacing: 3px;
+	font-size: 30px;
+	padding-right: 3px;
+
+}
+#nav li{
+	padding-left: 15px;
+}
+
+.autonomous{ letter-spacing: 1.5px}
+
+#nav a:link{
+	text-decoration: none;
+	font-style: italic;
+	color:#713E5D;
+
+}
+#nav a:active {
+	text-decoration: none;
+	font-style: italic;
+	color:#713E5D;
+
+}
+
+#nav a:visited	{
+	text-decoration:underline;
+	color:#C9CBCD;
+
+}
+#nav a:hover {
+	text-decoration: none;
+	font-style: italic;
+	color:#713E5D;
+}
+
+
+/*#nav{
+	margin: 0 0 0 0;
+	color: #C9CBCD;
+}*/
+
+#logo{
+	font-size: 100px;
+	position:static;
+	padding-right: 220px;
+}
+
+
+
+#bleh{
+	width: 300px;
+}
+
+/*
+#content{
+width: 70%;
+line-height:22px;
+padding:0 0 40px 30px;
+margin-left: 25%;
+color:white;
+
+}*/
+
+#footer{
+	background-color: #CAC2B6;
+	text-align: center;
+	color:#ffffff;
+	font-size: 10px;
+	height: 20px;
+
+}
+p{
+	margin: 15px 0 0 0;	
+
+} /*this is a good way to create space between paragraphs and not the br tag*/
+
+
+
+
+/*PHOTO LANDING*/
+
+.grid-container-photolanding{
+	display: grid;
+	 grid-template-columns: auto auto auto auto ;
+	 grid-template-rows: auto auto auto auto;
+	 margin: 50px 0 20px 0;
+	/* padding-left: 20px;
+	 padding-right: 20px;*/
+}
+
+.grid-item-photolanding {
+  background-color: #121212;
+  border: 0 solid rgba(0, 0, 0, 0.8);
+  padding: 20px 20px 20px 0;
+  font-size: 0;
+  text-align: center;
+}
+
+.photo{
+	height: 360px;
+	width: 270px;
+}
+.photo1{
+	height: 275px;
+	width: 275px;
+	margin-top: 45px;
+}
+
+
+/*HOME PAGE */
+
+.grid-container-home{
+	display: grid;
+	 grid-template-columns: auto auto auto	;
+	 margin:150px 0 0 0;
+	/* padding-left: 20px;
+	 padding-right: 20px;*/
+
+}
+
+.grid-item-home {
+  background-color: #121212;
+  padding: 20px 20px 20px 0;
+
+ 
+}
+.photohome1 {
+	width: 294px;
+	height: 393px;
+}
+
+.photohome2 {
+	width: 400px;
+	height: 400px;
+	
+}
+.photohome{
+	width: 400px;
+	height: 400px;
+}
+
+/*ABOUT*/
+
+.grid-container-about{
+	display: grid;
+	 grid-template-columns: auto auto;
+	
+	 margin:200px 0 0 0;
+	/* padding-left: 20px;
+	 padding-right: 20px;*/
+
+}
+.aratext{
+	color: white;
+	}
+.grid-item-about {
+  background-color: #121212;
+  border: 0 solid rgba(0, 0, 0, 0.8);
+  padding: 20px 20px 20px 0;
+  font-size: 0;
+  
+}
+
+.araabout{
+	width: 550px;
+	height: 550px;
+	}
+
+#about_writing{
+font-size: 24.6px;
+text-decoration: none;
+	color:white;
+font-weight: lighter;	
+
+}
+
+/*DIGITAL ARTS*/
+
+.grid-container-about{
+	display: grid;
+	 grid-template-columns: auto auto;
+	 margin:200px 0 0 0;
+
+	/* padding-left: 20px;
+	 padding-right: 20px;*/
+
+}
+.araweb{
+	width: 400px;
+	height: 400px;
+	}
+
+.aratext{
+	color: white;
+	}
+.grid-item-about {
+  background-color: #121212;
+  border: 0 solid rgba(0, 0, 0, 0.8);
+  padding: 20px 20px 20px 0;
+  font-size: 0;
+  
+}
+
+
+/*WEB BASED ART*/
+
+.grid-container-webart{
+	display: grid;
+	 grid-template-columns: auto auto ;
+	 grid-template-rows: auto auto ;
+	 margin: 80px 0 20px 0;
+	/* padding-left: 20px;
+	 padding-right: 20px;*/
+}
+
+.grid-item-webart {
+  background-color: #121212;
+  border: 0 solid rgba(0, 0, 0, 0.8);
+  padding: 20px 20px 20px 0;
+  font-size: 0;
+  text-align: center;
+}
+
+.natalie{
+	height: 150px;
+	width: 400px;
+	margin-top: 150px;	
+}
+.nani{
+	width: 400px;
+}
+.layoutclass3{
+	width: 400px;
+}
+.layoutclass4{
+	width: 500px;
+}
+
+/*IMPLODING IDENTITY*/
+.grid-container-test{
+	display: grid;
+	grid-template-rows: auto auto;
+
+	 margin: 25px 0 20px 25px;
+	 max-width:1200px;
+	  border: .5px solid gray;
+
+}
+.resize{
+	width: 1168px;	
+	margin-left:3px;
+	margin-right: 3px;
+
+}
+.grid-item-imploding_main{
+	grid-column: 1 / span 3;
+	grid-row: 1;
+	height: auto;
+	margin-top: 40px;
+}
+
+.grid-container-description{
+	display: grid;
+	grid-template-rows: auto auto;
+
+	 margin: 25px 0 20px 25px;
+	 max-width:700px;
+	 /* border: .5px solid gray;*/
+
+}
+
+.grid-item_imploding{
+	grid-column: 1 / span 3;
+	grid-row: 1;
+	height: auto;
+	padding:2px 5px 2px 10px;
+
+	color: #C9CBCD	;
+}
+
+
+
+.grid-container-implodingidentity{
+	display: grid;
+	 grid-template-columns: auto auto auto ;
+	 grid-template-rows: auto auto auto auto auto;
+	 margin: 30px 0 0 0;}
+
+.grid-item-implodingidentity{
+	 background-color: #121212;
+  border: 0 solid rgba(0, 0, 0, 0.8);
+  padding: 10px 20px 20px 0;
+  font-size: 0;
+  text-align: center;
+
+
+}
+.imploding_generic{
+	width:400px;
+	height: auto
+}
+
+.photoheight{
+	height: 265px;
+	width: auto;
+}
+
+
+/*Autonomous Learning*/
+
+
+.grid-container-learn{
+	display: grid;
+	 grid-template-columns: auto auto auto	;
+	 margin:150px 0 0 0;
+	/* padding-left: 20px;
+	 padding-right: 20px;*/
+
+}
+
+.grid-item-learn {
+  background-color: #121212;
+  padding: 20px 20px 20px 0;
+  margin-left: 100px
+
+ 
+}
+.coveda1 {
+	width: 150px;
+	height: 200px;
+}
+
+.ts1 {
+	width: 200px;
+	height: 200px;
+	
+}
+.bwx1{
+	width: 200px;
+	height: 200px;
+}
+
+.grid-container-learning{
+	display: grid;
+	grid-template-rows: auto auto;
+
+	 margin: 60px 0 20px 25px;
+	 max-width:1200px;
+	  border: .5px solid gray;
+
+}
+
+.grid-item_learning{
+	grid-column: 1 / span 3;
+	grid-row: 1;
+	height: auto;
+	padding:2px 5px 2px 10px;
+
+	color: #C9CBCD	;
+}
+
+
+/*Final Proposal*/
+#about_writing a:link{
+	text-decoration: none;
+	font-style: italic;
+	color:#713E5D;
+
+}
+#about_writing a:active {
+	text-decoration: none;
+	font-style: italic;
+	color:#713E5D;
+
+}
+
+#about_writing a:visited	{
+	text-decoration:underline;
+	color:#713E5D;
+
+}
+#about_writing a:hover {
+	text-decoration: none;
+	font-style: italic;
+	color:#713E5D;
+}
+#mapimage{
+	margin-left: 15%;
+	margin-top: 80px;
+	position: relative;
+	width: 1000px;
+}
+.grid-item-intfinal{
+	margin-left: 160px;
+	margin-top: 50px;
+	position: relative;
+}
+
+/*Final Project 2019 Fall Web As Artistic Platform*/
+
+
+.map{
+	margin-left: 30px;
+/*	margin-bottom: 30px;*/
+	position: absolute;
+
+
+}
+
+
+/*INDIA
+*/
+#infoindia{
+	display: none;
+	padding-left: 20px;	
+	color: #C9CBCD;	
+	font-size: 20px;
+	width: 350px;
+	background-color: #661F16;
+	margin-left: 20px;
+	padding-top: 20px;
+	height:250px;
+
+}
+.Indiabox{
+display: flex;
+/*margin-bottom: 20px;
+*//*padding-top: 30px;*/
+}
+
+
+#Adi{display: none;
+	background-color: #661F16;
+	color: #C9CBCD;	
+	font-size: 30px;
+	padding-left: 20px;
+	width: 230px;
+	padding-top: 20px;
+}
+
+#Shachi{display: none;
+	background-color: #661F16;
+color: #C9CBCD;	
+	font-size: 30px;
+padding-left: 20px;
+width: 230px;
+	padding-top: 20px;
+	margin-left: 20px;}
+
+
+#Indiaphotos{
+	margin-left: 100%;
+	margin-top: -100;
+
+}
+/*
+NEPAL*/
+#infonepal{
+	display: none;
+	padding-left: 20px;	
+	color: #C9CBCD;	
+	font-size: 20px;
+	width: 350px;
+	background-color: #4B1108;
+	margin-left: 20px;
+	padding-top: 20px;
+	height:250px;
+
+}
+#Akki{
+	display: none;
+
+}
+.Nepalbox{
+display: flex;
+margin-bottom: 20px;
+/*padding-top: 30px;*/
+}
+
+/*ARGENTINA*/
+
+
+#infoargentina{
+	display: none;
+	padding-left: 20px;	
+	color: #C9CBCD;	
+	font-size: 20px;
+	width: 350px;
+	background-color: #883229;
+	margin-left: 20px;
+	padding-top: 20px;
+	height:250px;
+
+}
+#Gabo{
+	display: none;
+
+}
+.Argentinabox{
+display: flex;
+margin-bottom: 20px;
+/*padding-top: 30px;*/
+}
+
+/*
+PAKISTAN*/
+.Pakistanbox{
+display: flex;
+margin-bottom: 20px;
+/*padding-top: 30px;*/
+}
+
+#infopakistan{
+	display: none;
+	padding-left: 20px;	
+	color: #C9CBCD;	
+	font-size: 20px;
+	width: 350px;
+	height: 400px;
+	background-color: #410801;
+	margin-left: 20px;
+	padding-top: 10px;
+	height:250px;
+
+}
+
+/*SWAZILAND
+*/
+.Swazibox{
+display: flex;
+margin-bottom: 20px;
+/*padding-top: 30px;*/
+}
+
+
+#infoswazi{
+	display: none;
+	padding-left: 20px;	
+	color: #C9CBCD;	
+	font-size: 20px;
+	width: 350px;
+	background-color: #8b3228;
+	margin-left: 20px;
+	padding-top: 20px;
+	height:250px;
+
+}
+/*
+ARMENIA
+*/
+.Armeniabox{
+display: flex;
+margin-bottom: 20px;
+/*padding-top: 30px;*/
+}
+#infoarmenia{
+	display: none;
+}
+
+/*FOOTER*/
+#footer{ margin-left: 10px;
+height: 100px;
+position: absolute;
+margin-top: 2%;}
+
+#nest{
+	display: flex;
+}
+
+#countrynames{color: white;
+display: relative;}
+
+#gradient{
+	display: relative;
+}
